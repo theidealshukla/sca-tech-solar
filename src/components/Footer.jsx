@@ -1,0 +1,129 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Sun, Phone, Mail, MapPin, Facebook, Instagram, Youtube, Twitter, ArrowUpRight } from 'lucide-react'
+
+const footerLinks = {
+  Company: [
+    { label: 'About Us', path: '/about' },
+    { label: 'Our Projects', path: '/projects' },
+    { label: 'Careers', path: '/contact' },
+    { label: 'Press & Media', path: '/contact' },
+  ],
+  Services: [
+    { label: 'Residential Solar', path: '/services' },
+    { label: 'Commercial Solar', path: '/services' },
+    { label: 'Industrial Solar', path: '/services' },
+    { label: 'O&M Services', path: '/services' },
+  ],
+  Products: [
+    { label: 'Solar Panels', path: '/products' },
+    { label: 'Inverters', path: '/products' },
+    { label: 'Batteries', path: '/products' },
+    { label: 'Accessories', path: '/products' },
+  ],
+  Support: [
+    { label: 'Get Free Quote', path: '/contact' },
+    { label: 'Subsidy Info', path: '/contact' },
+    { label: 'EMI Options', path: '/contact' },
+    { label: 'FAQ', path: '/#faq' },
+  ],
+}
+
+export default function Footer() {
+  return (
+    <footer className="bg-night-950 text-white overflow-hidden">
+      {/* Top section */}
+      <div className="max-w-7xl mx-auto px-5 md:px-8 pt-16 pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          {/* Brand col */}
+          <div className="lg:col-span-2">
+            <Link to="/" className="flex items-center gap-2.5 mb-6">
+              <div className="w-10 h-10 bg-solar-500 rounded-xl flex items-center justify-center">
+                <Sun className="w-5 h-5 text-white" strokeWidth={2.5} />
+              </div>
+              <div>
+                <span className="font-black text-2xl tracking-tight leading-none block">SURYA<span className="text-solar-400">TECH</span></span>
+                <span className="text-[9px] font-semibold tracking-[0.18em] uppercase text-white/40">Solar Solutions · Indore</span>
+              </div>
+            </Link>
+            <p className="text-night-300 text-sm leading-relaxed mb-6 max-w-xs">
+              Powering Madhya Pradesh's clean energy future since 2012. Over 1,200 rooftop installations across Indore, Bhopal and Central India.
+            </p>
+            <div className="flex flex-col gap-3 mb-8">
+              <a href="tel:+917312345678" className="flex items-center gap-3 text-sm text-night-300 hover:text-solar-400 transition-colors">
+                <Phone className="w-4 h-4 text-solar-500 flex-shrink-0" />
+                +91 731 234 5678
+              </a>
+              <a href="mailto:hello@suryatechsolar.in" className="flex items-center gap-3 text-sm text-night-300 hover:text-solar-400 transition-colors">
+                <Mail className="w-4 h-4 text-solar-500 flex-shrink-0" />
+                hello@suryatechsolar.in
+              </a>
+              <div className="flex items-start gap-3 text-sm text-night-300">
+                <MapPin className="w-4 h-4 text-solar-500 flex-shrink-0 mt-0.5" />
+                <span>42, Vijay Nagar Main Road, Indore, Madhya Pradesh — 452010</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              {[
+                { icon: Facebook, href: '#' },
+                { icon: Instagram, href: '#' },
+                { icon: Youtube, href: '#' },
+                { icon: Twitter, href: '#' },
+              ].map(({ icon: Icon, href }, i) => (
+                <a
+                  key={i}
+                  href={href}
+                  className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-night-400 hover:bg-solar-500 hover:text-white hover:border-solar-500 transition-all duration-300"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Links */}
+          {Object.entries(footerLinks).map(([category, links]) => (
+            <div key={category}>
+              <p className="text-xs font-bold tracking-[0.18em] uppercase text-night-400 mb-5">{category}</p>
+              <ul className="flex flex-col gap-2.5">
+                {links.map(link => (
+                  <li key={link.label}>
+                    <Link
+                      to={link.path}
+                      className="text-sm text-night-300 hover:text-solar-400 transition-colors duration-300 flex items-center gap-1 group"
+                    >
+                      {link.label}
+                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-white/5" />
+
+      {/* Bottom bar */}
+      <div className="max-w-7xl mx-auto px-5 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+        <p className="text-night-500 text-xs">
+          © 2024 SuryaTech Solar Pvt. Ltd. All rights reserved. · CIN: U40100MP2012PTC12345
+        </p>
+        <div className="flex items-center gap-5">
+          <a href="#" className="text-night-500 text-xs hover:text-night-300 transition-colors">Privacy Policy</a>
+          <a href="#" className="text-night-500 text-xs hover:text-night-300 transition-colors">Terms of Service</a>
+          <a href="#" className="text-night-500 text-xs hover:text-night-300 transition-colors">Sitemap</a>
+        </div>
+      </div>
+
+      {/* Big brand text — like reference */}
+      <div className="overflow-hidden border-t border-white/5">
+        <p className="text-[clamp(3rem,18vw,14rem)] font-black text-white/[0.04] leading-none tracking-tighter select-none text-center pb-4 whitespace-nowrap">
+          SURYATECH
+        </p>
+      </div>
+    </footer>
+  )
+}

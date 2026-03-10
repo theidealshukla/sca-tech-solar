@@ -1,0 +1,57 @@
+import React, { useState } from 'react'
+import { Phone, Mail, MapPin, Clock, CheckCircle2, ArrowRight, MessageCircle } from 'lucide-react'
+import ContactSection from '../sections/ContactSection'
+
+export default function Contact() {
+  return (
+    <div className="pt-20">
+      {/* Page Hero */}
+      <div className="py-20 md:py-28 bg-night-950 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1800&q=80&auto=format" alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-5 md:px-8">
+          <p className="section-tag text-solar-400">Get In Touch</p>
+          <h1 className="font-black text-white leading-tight mt-2 mb-5" style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)', letterSpacing: '-0.03em' }}>
+            Let's talk solar.
+          </h1>
+          <p className="text-night-300 max-w-lg text-lg leading-relaxed">
+            Whether you're ready to install or just curious about solar — we're here. Get a free site survey and zero-obligation quote from Indore's most trusted solar team.
+          </p>
+        </div>
+      </div>
+
+      {/* Contact section */}
+      <ContactSection />
+
+      {/* Map placeholder */}
+      <div className="bg-night-100 h-72 relative overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center">
+            <MapPin className="w-10 h-10 text-solar-500 mx-auto mb-3" />
+            <p className="font-bold text-night-700">42, Vijay Nagar Main Road, Indore — 452010</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-solar-600 text-sm font-semibold mt-2 inline-block hover:underline">
+              Open in Google Maps →
+            </a>
+          </div>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format"
+          alt="Indore city"
+          className="w-full h-full object-cover opacity-20"
+        />
+      </div>
+
+      {/* WhatsApp CTA */}
+      <div className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
+          <div className="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition-colors cursor-pointer">
+            <MessageCircle className="w-6 h-6" />
+            Chat with us on WhatsApp — +91 731 234 5678
+          </div>
+          <p className="text-night-400 text-sm mt-4">Fastest response: typically under 15 minutes during business hours</p>
+        </div>
+      </div>
+    </div>
+  )
+}
