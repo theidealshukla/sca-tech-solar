@@ -15,7 +15,7 @@ const milestones = [
   { year: '2018', event: '500 installations milestone. Expanded to Bhopal and Ujjain.' },
   { year: '2020', event: 'Launched proprietary monitoring platform and 24/7 O&M service.' },
   { year: '2022', event: 'Crossed 1,000 installations. Entered industrial & ground-mount segment.' },
-  { year: '2024', event: '1,200+ installations. 18 MW total capacity. MP's #1 solar installer.' },
+  { year: '2024', event: "1,200+ installations. 18 MW total capacity. MP's #1 solar installer." },
 ]
 
 export default function About() {
@@ -28,10 +28,10 @@ export default function About() {
           <div className="absolute inset-0 bg-gradient-to-t from-night-950 via-night-950/50 to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto px-5 md:px-8 pb-20">
-          <p className="section-tag text-solar-400 mb-3">About SuryaTech</p>
+          <p className="section-tag text-white/40 mb-3">About SuryaTech</p>
           <h1 className="font-black text-white leading-tight" style={{ fontSize: 'clamp(2.5rem, 7vw, 7rem)', letterSpacing: '-0.03em' }}>
             Conserving Resources.<br />
-            <span className="gradient-text-solar font-display italic">Improving Life.</span>
+            <span className="font-light text-white/40">Improving Life.</span>
           </h1>
         </div>
       </div>
@@ -54,14 +54,14 @@ export default function About() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Sun, label: 'Installations', value: '1,200+', color: 'bg-solar-50 border-solar-100', iconColor: 'text-solar-500' },
-                { icon: Leaf, label: 'CO₂ Offset/Year', value: '15,000 T', color: 'bg-green-50 border-green-100', iconColor: 'text-green-500' },
-                { icon: Users, label: 'Happy Families', value: '1,100+', color: 'bg-sky-50 border-sky-100', iconColor: 'text-sky-500' },
-                { icon: Award, label: 'Years Experience', value: '12+', color: 'bg-purple-50 border-purple-100', iconColor: 'text-purple-500' },
+                { icon: Sun, label: 'Installations', value: '1,200+', color: 'bg-night-50 border-night-200', iconColor: 'text-night-500' },
+                { icon: Leaf, label: 'CO₂ Offset/Year', value: '15,000 T', color: 'bg-night-50 border-night-200', iconColor: 'text-night-500' },
+                { icon: Users, label: 'Happy Families', value: '1,100+', color: 'bg-night-50 border-night-200', iconColor: 'text-night-500' },
+                { icon: Award, label: 'Years Experience', value: '12+', color: 'bg-night-50 border-night-200', iconColor: 'text-night-500' },
               ].map(({ icon: Icon, label, value, color, iconColor }) => (
                 <div key={label} className={`rounded-2xl border p-6 ${color}`}>
                   <Icon className={`w-6 h-6 mb-3 ${iconColor}`} />
-                  <p className="text-3xl font-black text-night-900">{value}</p>
+                  <p className="text-3xl font-black font-display text-night-900">{value}</p>
                   <p className="text-sm text-night-500 mt-1">{label}</p>
                 </div>
               ))}
@@ -77,8 +77,8 @@ export default function About() {
                 {milestones.map((m, i) => (
                   <div key={i} className="flex items-start gap-8 pl-4">
                     <div className="relative flex-shrink-0 w-24 text-right">
-                      <span className="text-sm font-black text-solar-500">{m.year}</span>
-                      <div className="absolute right-[-29px] top-1 w-3 h-3 rounded-full bg-solar-500 border-2 border-white" />
+                      <span className="text-sm font-black text-night-400">{m.year}</span>
+                      <div className="absolute right-[-29px] top-1 w-3 h-3 rounded-full bg-night-900 border-2 border-white" />
                     </div>
                     <p className="text-night-600 pt-0.5 leading-relaxed">{m.event}</p>
                   </div>
@@ -104,7 +104,7 @@ export default function About() {
                 </div>
                 <div className="p-5">
                   <h3 className="font-black text-night-900">{member.name}</h3>
-                  <p className="text-solar-600 text-sm font-semibold mt-0.5 mb-2">{member.role}</p>
+                  <p className="text-night-500 text-sm font-semibold mt-0.5 mb-2">{member.role}</p>
                   <p className="text-night-500 text-sm">{member.bio}</p>
                 </div>
               </div>
@@ -114,11 +114,11 @@ export default function About() {
       </div>
 
       {/* CTA */}
-      <div className="py-20 bg-solar-500">
+      <div className="py-20 bg-night-900">
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
           <h2 className="font-black text-white text-4xl md:text-5xl mb-5">Ready to join the solar revolution?</h2>
-          <p className="text-solar-100 text-lg mb-8">Get your free site survey and custom quote today. No commitment required.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-solar-700 font-bold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
+          <p className="text-white/50 text-lg mb-8">Get your free site survey and custom quote today. No commitment required.</p>
+          <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-night-900 font-bold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
             Book Free Survey <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

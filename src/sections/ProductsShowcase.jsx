@@ -1,81 +1,63 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Zap, Shield, Cpu, Star } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
-const categories = ['All', 'Panels', 'Inverters', 'Batteries', 'Kits']
+const categories = ['All', 'Solar Panels', 'Batteries', 'Water Heaters', 'Inverters']
 
 const products = [
   {
-    category: 'Panels',
-    name: 'LongSun HiMO 7',
-    brand: 'LONGi Solar',
-    power: '545 Wp',
-    eff: '22.3%',
-    warranty: '25 Yr',
-    price: '₹21,500',
-    badge: 'Best Seller',
-    badgeColor: 'bg-solar-500',
-    img: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=500&q=80&auto=format',
+    category: 'Solar Panels',
+    name: 'LongSun Hi-MO Series 545W',
+    desc: 'Bifacial half-cell technology for maximum energy yield and long-term reliability.',
+    img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80&auto=format&fit=crop',
   },
   {
-    category: 'Panels',
-    name: 'Tiger Neo N-Type',
-    brand: 'Jinko Solar',
-    power: '580 Wp',
-    eff: '23.1%',
-    warranty: '30 Yr',
-    price: '₹24,800',
-    badge: 'Premium',
-    badgeColor: 'bg-sky-500',
-    img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&q=80&auto=format',
+    category: 'Solar Panels',
+    name: 'Tiger Neo N-Type 580W',
+    desc: 'Premium N-Type technology perfect for both residential and commercial rooftops.',
+    img: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=600&q=80&auto=format&fit=crop',
   },
   {
-    category: 'Panels',
-    name: 'Waaree Navitas',
-    brand: 'Waaree',
-    power: '530 Wp',
-    eff: '21.5%',
-    warranty: '25 Yr',
-    price: '₹18,900',
-    badge: 'Made in India',
-    badgeColor: 'bg-green-600',
-    img: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=500&q=80&auto=format',
+    category: 'Solar Panels',
+    name: 'Waaree Navitas 530W',
+    desc: 'High-efficiency Made In India panels ideal for extreme weather conditions.',
+    img: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=600&q=80&auto=format&fit=crop',
   },
   {
-    category: 'Inverters',
-    name: 'Solis S6 Pro',
-    brand: 'Solis',
-    power: '5 kW',
-    eff: '98.4%',
-    warranty: '10 Yr',
-    price: '₹32,000',
-    badge: 'Top Rated',
-    badgeColor: 'bg-purple-500',
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80&auto=format',
+    category: 'Batteries',
+    name: 'PowerWall Pro 10kWh',
+    desc: 'Seamless backup power with smart app integration and an ultra-long cycle life.',
+    img: 'https://images.unsplash.com/photo-1620241608701-94ef138fc417?w=600&q=80&auto=format&fit=crop',
+  },
+  {
+    category: 'Batteries',
+    name: 'EcoStore Lithium 5kWh',
+    desc: 'Compact, scalable storage solution designed for essential home backup.',
+    img: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&q=80&auto=format&fit=crop',
+  },
+  {
+    category: 'Water Heaters',
+    name: 'AquaSun ETC 200 LPD',
+    desc: 'Evacuated Tube Collector system providing 24x7 hot water cost-effectively.',
+    img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80&auto=format&fit=crop',
+  },
+  {
+    category: 'Water Heaters',
+    name: 'ThermoMax FPC 300 LPD',
+    desc: 'Flat Plate Collector technology built for large families and commercial use.',
+    img: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80&auto=format&fit=crop',
   },
   {
     category: 'Inverters',
-    name: 'Havells Solero',
-    brand: 'Havells',
-    power: '10 kW',
-    eff: '97.9%',
-    warranty: '5 Yr',
-    price: '₹58,000',
-    badge: 'Indian Brand',
-    badgeColor: 'bg-orange-500',
-    img: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=500&q=80&auto=format',
+    name: 'Solis S6 Pro 5kW',
+    desc: 'Intelligent hybrid inverter designed for optimal self-consumption.',
+    img: 'https://images.unsplash.com/photo-1518104593124-ac2e82abcb4b?w=600&q=80&auto=format&fit=crop',
   },
   {
-    category: 'Kits',
-    name: 'Home Starter Kit',
-    brand: 'SuryaTech',
-    power: '3 kWp',
-    eff: 'On-grid',
-    warranty: '25 Yr',
-    price: '₹1,35,000',
-    badge: 'Complete Kit',
-    badgeColor: 'bg-solar-600',
-    img: 'https://images.unsplash.com/photo-1615400610825-7f1b9d573c09?w=500&q=80&auto=format',
+    category: 'Inverters',
+    name: 'Havells Solero 10kW',
+    desc: 'Heavy-duty three-phase inverter tailored for large residential setups.',
+    img: 'https://images.unsplash.com/photo-1621616233486-538ca2713e7b?w=600&q=80&auto=format&fit=crop',
   },
 ]
 
@@ -84,30 +66,33 @@ export default function ProductsShowcase() {
   const filtered = active === 'All' ? products : products.filter(p => p.category === active)
 
   return (
-    <section className="py-24 md:py-32 bg-night-50">
+    <section className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        <div className="flex flex-col md:flex-row md:items-end gap-6 mb-12">
-          <div className="flex-1">
-            <p className="section-tag">Our Range</p>
-            <h2 className="font-black text-night-900 leading-tight" style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)', letterSpacing: '-0.03em' }}>
-              We give you a comprehensive view of top solar products.
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-night-400 mb-4">
+              <div className="w-6 h-px bg-night-400" />
+              <span>Our Products</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-night-900 leading-tight tracking-tight">
+              Premium solar equipment for every need.
             </h2>
           </div>
-          <Link to="/products" className="btn-outline self-start md:self-auto whitespace-nowrap">
+          <Link to="/products" className="btn-outline self-start md:self-auto whitespace-nowrap hidden md:inline-flex">
             All Products <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
         {/* Filter tabs */}
-        <div className="flex flex-wrap gap-2 mb-10">
+        <div className="flex flex-wrap gap-2 mb-12">
           {categories.map(cat => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                 active === cat
                   ? 'bg-night-900 text-white shadow-lg'
-                  : 'bg-white border border-night-200 text-night-600 hover:border-night-400'
+                  : 'bg-night-50 border border-night-100 text-night-600 hover:border-night-300 hover:bg-night-100'
               }`}
             >
               {cat}
@@ -115,51 +100,46 @@ export default function ProductsShowcase() {
           ))}
         </div>
 
-        {/* Product grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Product grid - minimalist card layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {filtered.map((p, i) => (
-            <div key={i} className="bg-white rounded-2xl overflow-hidden border border-night-100 card-hover group">
-              {/* Image */}
-              <div className="relative h-52 overflow-hidden bg-night-50">
-                <img src={p.img} alt={p.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <span className={`absolute top-3 left-3 px-2.5 py-1 rounded-full text-white text-xs font-bold ${p.badgeColor}`}>
-                  {p.badge}
-                </span>
-                <div className="absolute top-3 right-3 flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1">
-                  <Star className="w-3 h-3 text-solar-500 fill-solar-500" />
-                  <span className="text-xs font-bold text-night-700">4.9</span>
+            <div key={i} className="group cursor-pointer">
+              {/* Image Container with clean gray background */}
+              <div className="bg-night-50 rounded-2xl aspect-[4/3] mb-6 overflow-hidden relative">
+                {/* 
+                  Using mix-blend-multiply if we wanted isolated images, 
+                  but since we have standard Unsplash landscape photos, object-cover works best 
+                */}
+                <img 
+                  src={p.img} 
+                  alt={p.name} 
+                  className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 hover:shadow-xl" 
+                />
+                
+                {/* Subtle category tag on hover */}
+                <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-bold tracking-wider uppercase text-night-900 opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                  {p.category}
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-5">
-                <p className="text-xs font-bold text-night-400 tracking-wider uppercase mb-1">{p.brand}</p>
-                <h3 className="font-black text-night-900 text-lg mb-3">{p.name}</h3>
-                <div className="grid grid-cols-3 gap-2 mb-4">
-                  {[
-                    { icon: Zap, label: 'Power', value: p.power },
-                    { icon: Cpu, label: 'Efficiency', value: p.eff },
-                    { icon: Shield, label: 'Warranty', value: p.warranty },
-                  ].map(({ icon: Icon, label, value }) => (
-                    <div key={label} className="bg-night-50 rounded-xl p-2.5 text-center">
-                      <Icon className="w-3.5 h-3.5 text-solar-500 mx-auto mb-1" />
-                      <p className="text-xs font-black text-night-900">{value}</p>
-                      <p className="text-[10px] text-night-400">{label}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-2xl font-black text-night-900">{p.price}</p>
-                    <p className="text-xs text-night-400">Installed price per unit</p>
-                  </div>
-                  <Link to="/contact" className="btn-primary text-xs py-2.5 px-4">
-                    Get Quote
-                  </Link>
-                </div>
+              {/* Text Content */}
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-night-900 mb-2 group-hover:text-night-600 transition-colors duration-300">
+                  {p.name}
+                </h3>
+                <p className="text-night-500 text-sm md:text-base leading-relaxed">
+                  {p.desc}
+                </p>
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* Mobile-only view all button */}
+        <div className="mt-12 md:hidden flex justify-center">
+          <Link to="/products" className="btn-outline w-full justify-center">
+            All Products <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>

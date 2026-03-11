@@ -47,7 +47,7 @@ export default function StatsBar() {
     <section id="stats" className="bg-night-950 py-12">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         {/* Marquee strip above stats */}
-        <div className="overflow-hidden mb-10 opacity-30">
+        <div className="overflow-hidden mb-10 opacity-20">
           <div className="marquee-inner whitespace-nowrap">
             {[...Array(2)].map((_, idx) => (
               <span key={idx} className="inline-flex items-center gap-6 text-white text-xs font-bold tracking-[0.2em] uppercase">
@@ -62,11 +62,11 @@ export default function StatsBar() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-white/5 rounded-2xl overflow-hidden">
           {stats.map((s, i) => (
             <div key={i} className="bg-night-950 px-6 py-8 flex flex-col items-start gap-1 group hover:bg-night-900 transition-colors duration-300">
-              <p className="text-3xl md:text-4xl font-black text-white leading-none">
+              <p className="text-3xl md:text-4xl font-black text-white leading-none font-display">
                 <CountUp target={s.value} suffix={s.suffix} />
               </p>
-              <p className="text-sm font-semibold text-solar-400 mt-1">{s.label}</p>
-              <p className="text-xs text-night-400">{s.sub}</p>
+              <p className="text-sm font-semibold text-white/50 mt-1">{s.label}</p>
+              <p className="text-xs text-night-600">{s.sub}</p>
             </div>
           ))}
         </div>

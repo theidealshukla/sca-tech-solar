@@ -38,7 +38,7 @@ export default function Hero() {
   const slide = slides[active]
 
   return (
-    <section className="relative h-screen min-h-[680px] max-h-[900px] overflow-hidden">
+    <section className="relative h-screen min-h-[600px] overflow-hidden">
       {/* Background images */}
       {slides.map((s, i) => (
         <div
@@ -54,12 +54,14 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* Overlay */}
+      {/* Overlay — light & airy like reference */}
       <div className="absolute inset-0 hero-overlay" />
-      <div className="absolute inset-0 bg-gradient-to-r from-night-950/80 via-night-950/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-night-950/60 via-night-950/25 to-transparent" />
 
       {/* Content */}
-      <div className="relative h-full max-w-7xl mx-auto px-5 md:px-8 flex items-end pb-20 md:pb-28">
+      <div className="relative h-full max-w-7xl mx-auto px-5 md:px-8 flex flex-col pb-8 md:pb-20 pt-[80px] md:pt-[100px]">
+        {/* Pushes content to the bottom if there's extra height, but collapses safely if not */}
+        <div className="flex-1 min-h-[20px] md:min-h-[40px]" />
         <div className="max-w-3xl">
           {/* Tag */}
           <div
@@ -67,26 +69,26 @@ export default function Hero() {
             className="flex items-center gap-2 mb-6 opacity-0"
             style={{ animation: 'fadeUp 0.6s 0.1s ease-out forwards' }}
           >
-            <div className="w-6 h-px bg-solar-400" />
-            <span className="text-xs font-bold tracking-[0.25em] uppercase text-solar-300">{slide.tagline}</span>
+            <div className="w-6 h-px bg-white/60" />
+            <span className="text-xs font-bold tracking-[0.25em] uppercase text-white/60">{slide.tagline}</span>
           </div>
 
-          {/* Main heading — large like reference */}
+          {/* Main heading — large, bold, clean like reference */}
           <h1 key={`h-${animKey}`} className="mb-6">
             {slide.heading.map((line, i) => (
               <span
                 key={i}
                 className="block text-white font-black leading-[1.0] opacity-0"
                 style={{
-                  fontSize: 'clamp(2.8rem, 7vw, 7.5rem)',
+                  fontSize: 'clamp(2.2rem, 5vw, 4.5rem)',
                   animation: `fadeUp 0.7s ${0.2 + i * 0.12}s ease-out forwards`,
-                  letterSpacing: '-0.02em',
+                  letterSpacing: '-0.03em',
                 }}
               >
                 {i === 1 ? (
                   <>
                     {line.split(' ')[0]}{' '}
-                    <span className="gradient-text-solar italic font-display">{line.split(' ').slice(1).join(' ')}</span>
+                    <span className="text-white/50 font-light">{line.split(' ').slice(1).join(' ')}</span>
                   </>
                 ) : line}
               </span>
@@ -96,7 +98,7 @@ export default function Hero() {
           {/* Sub */}
           <p
             key={`sub-${animKey}`}
-            className="text-white/70 text-base md:text-lg leading-relaxed max-w-lg mb-8 opacity-0"
+            className="text-white/60 text-base md:text-lg leading-relaxed max-w-lg mb-8 opacity-0"
             style={{ animation: 'fadeUp 0.7s 0.55s ease-out forwards' }}
           >
             {slide.sub}
@@ -108,7 +110,7 @@ export default function Hero() {
             className="flex flex-wrap items-center gap-4 opacity-0"
             style={{ animation: 'fadeUp 0.7s 0.7s ease-out forwards' }}
           >
-            <Link to="/contact" className="btn-primary text-sm shadow-solar-500/40 shadow-xl">
+            <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-night-900 px-7 py-3.5 rounded-full font-semibold text-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
               Get Free Solar Assessment
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -125,7 +127,7 @@ export default function Hero() {
             style={{ animation: 'fadeUp 0.7s 0.85s ease-out forwards' }}
           >
             {['MNRE Approved', '25yr Warranty', 'EMI @ 0%', 'Subsidy Support'].map(b => (
-              <span key={b} className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-xs font-semibold tracking-wide">
+              <span key={b} className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/70 text-xs font-semibold tracking-wide">
                 {b}
               </span>
             ))}
@@ -134,8 +136,8 @@ export default function Hero() {
       </div>
 
       {/* Live badge */}
-      <div className="absolute top-24 right-5 md:right-8 glass-card rounded-2xl p-4 flex items-center gap-3 opacity-0" style={{ animation: 'fadeIn 1s 1.2s ease-out forwards' }}>
-        <div className="w-10 h-10 bg-solar-500 rounded-xl flex items-center justify-center flex-shrink-0">
+      <div className="absolute top-24 right-5 md:right-8 glass-card rounded-2xl p-4 hidden md:flex items-center gap-3 opacity-0" style={{ animation: 'fadeIn 1s 1.2s ease-out forwards' }}>
+        <div className="w-10 h-10 bg-night-900 rounded-xl flex items-center justify-center flex-shrink-0">
           <Zap className="w-5 h-5 text-white" />
         </div>
         <div>
@@ -151,13 +153,13 @@ export default function Hero() {
           <button
             key={i}
             onClick={() => { setActive(i); setAnimKey(prev => prev + 1) }}
-            className={`transition-all duration-300 rounded-full ${i === active ? 'w-8 h-2 bg-solar-400' : 'w-2 h-2 bg-white/30 hover:bg-white/60'}`}
+            className={`transition-all duration-300 rounded-full ${i === active ? 'w-8 h-2 bg-white' : 'w-2 h-2 bg-white/30 hover:bg-white/60'}`}
           />
         ))}
       </div>
 
       {/* Scroll indicator */}
-      <a href="#stats" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 hover:text-white/80 transition-colors">
+      <a href="#stats" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 hover:text-white/70 transition-colors">
         <ChevronDown className="w-5 h-5 animate-bounce" />
       </a>
     </section>

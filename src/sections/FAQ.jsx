@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     q: 'What is the payback period for solar in Indore?',
-    a: 'With Indore's 300+ sunny days and MPEZ tariff of ₹7.5–9/unit, payback periods are typically 3–5 years for residential and 2.5–4 years for commercial. After payback, you generate free electricity for the remaining 20+ years.',
+    a: "With Indore's 300+ sunny days and MPEZ tariff of ₹7.5–9/unit, payback periods are typically 3–5 years for residential and 2.5–4 years for commercial. After payback, you generate free electricity for the remaining 20+ years.",
   },
   {
     q: 'Will solar work during power cuts?',
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'What maintenance is required for solar panels?',
-    a: 'Solar panels require minimal maintenance — mainly periodic cleaning to remove dust. Indore's dusty climate means cleaning every 2–3 months. We offer Annual Maintenance Contracts (AMC) starting ₹3,500/year including 2 cleanings and performance health checks.',
+    a: "Solar panels require minimal maintenance — mainly periodic cleaning to remove dust. Indore's dusty climate means cleaning every 2–3 months. We offer Annual Maintenance Contracts (AMC) starting ₹3,500/year including 2 cleanings and performance health checks.",
   },
   {
     q: 'What warranties do you provide?',
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'Can I get solar installed on a rented property?',
-    a: 'You can install solar on a rented property with the landlord's written consent. The system can be transferred if you move. Many landlords are agreeable as it increases property value.',
+    a: "You can install solar on a rented property with the landlord's written consent. The system can be transferred if you move. Many landlords are agreeable as it increases property value.",
   },
 ]
 
@@ -51,7 +51,7 @@ export default function FAQ() {
             <p className="text-night-500 text-sm leading-relaxed mt-4">
               Have a question not covered here? Our experts are available Mon–Sat 9am–6pm.
             </p>
-            <a href="tel:+917312345678" className="inline-flex items-center gap-2 mt-6 text-sm font-bold text-solar-600 hover:text-solar-700 transition-colors">
+            <a href="tel:+917312345678" className="inline-flex items-center gap-2 mt-6 text-sm font-bold text-night-900 hover:text-night-600 transition-colors">
               Call us: +91 731 234 5678 →
             </a>
           </div>
@@ -64,11 +64,11 @@ export default function FAQ() {
                     className="w-full flex items-start gap-4 text-left group"
                   >
                     <span className={`mt-1 w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center border-2 transition-all duration-300 ${
-                      open === i ? 'border-solar-500 bg-solar-500 text-white' : 'border-night-200 text-night-400 group-hover:border-solar-400'
+                      open === i ? 'border-night-900 bg-night-900 text-white' : 'border-night-200 text-night-400 group-hover:border-night-400'
                     }`}>
                       {open === i ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                     </span>
-                    <span className={`font-semibold text-base transition-colors duration-300 ${open === i ? 'text-solar-600' : 'text-night-800 group-hover:text-night-900'}`}>
+                    <span className={`font-semibold text-base transition-colors duration-300 ${open === i ? 'text-night-900' : 'text-night-700 group-hover:text-night-900'}`}>
                       {faq.q}
                     </span>
                   </button>

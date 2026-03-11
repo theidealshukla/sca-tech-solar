@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, CheckCircle2, ArrowRight, MessageCircle } from 'lucide-react'
+import React from 'react'
+import { MapPin, MessageCircle } from 'lucide-react'
 import ContactSection from '../sections/ContactSection'
 
 export default function Contact() {
@@ -11,11 +11,11 @@ export default function Contact() {
           <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1800&q=80&auto=format" alt="" className="w-full h-full object-cover" />
         </div>
         <div className="relative max-w-7xl mx-auto px-5 md:px-8">
-          <p className="section-tag text-solar-400">Get In Touch</p>
+          <p className="section-tag text-white/40">Get In Touch</p>
           <h1 className="font-black text-white leading-tight mt-2 mb-5" style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)', letterSpacing: '-0.03em' }}>
             Let's talk solar.
           </h1>
-          <p className="text-night-300 max-w-lg text-lg leading-relaxed">
+          <p className="text-night-400 max-w-lg text-lg leading-relaxed">
             Whether you're ready to install or just curious about solar — we're here. Get a free site survey and zero-obligation quote from Indore's most trusted solar team.
           </p>
         </div>
@@ -28,9 +28,9 @@ export default function Contact() {
       <div className="bg-night-100 h-72 relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
-            <MapPin className="w-10 h-10 text-solar-500 mx-auto mb-3" />
+            <MapPin className="w-10 h-10 text-night-400 mx-auto mb-3" />
             <p className="font-bold text-night-700">42, Vijay Nagar Main Road, Indore — 452010</p>
-            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-solar-600 text-sm font-semibold mt-2 inline-block hover:underline">
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-night-500 text-sm font-semibold mt-2 inline-block hover:underline">
               Open in Google Maps →
             </a>
           </div>
@@ -45,7 +45,7 @@ export default function Contact() {
       {/* WhatsApp CTA */}
       <div className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
-          <div className="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition-colors cursor-pointer">
+          <div className="inline-flex items-center gap-3 bg-night-900 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-night-800 transition-colors cursor-pointer">
             <MessageCircle className="w-6 h-6" />
             Chat with us on WhatsApp — +91 731 234 5678
           </div>

@@ -17,11 +17,11 @@ const projects = [
 const types = ['All', 'Residential', 'Commercial', 'Industrial', 'Educational', 'Religious']
 
 const typeColors = {
-  Industrial: 'bg-orange-500',
-  Commercial: 'bg-sky-500',
-  Residential: 'bg-green-500',
-  Educational: 'bg-purple-500',
-  Religious: 'bg-solar-500',
+  Industrial: 'bg-night-700',
+  Commercial: 'bg-night-600',
+  Residential: 'bg-night-500',
+  Educational: 'bg-night-700',
+  Religious: 'bg-night-800',
 }
 
 export default function Projects() {
@@ -36,7 +36,7 @@ export default function Projects() {
           <p className="section-tag">Our Portfolio</p>
           <h1 className="font-black text-night-900 leading-tight mt-2" style={{ fontSize: 'clamp(2.5rem, 6vw, 7rem)', letterSpacing: '-0.03em' }}>
             1,200+ installations.<br />
-            <span className="gradient-text-solar font-display italic">Real proof.</span>
+            <span className="font-light text-night-400">Real proof.</span>
           </h1>
         </div>
         {/* Big text background */}
@@ -70,7 +70,7 @@ export default function Projects() {
                 <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 <span className={`absolute top-3 left-3 px-2.5 py-1 rounded-full text-white text-xs font-bold ${typeColors[p.type] || 'bg-night-500'}`}>{p.type}</span>
                 <div className="absolute top-3 right-3 bg-night-950/80 backdrop-blur-sm rounded-full px-3 py-1.5 flex items-center gap-1.5">
-                  <Zap className="w-3 h-3 text-solar-400" />
+                  <Zap className="w-3 h-3 text-white/60" />
                   <span className="text-white text-xs font-black">{p.capacity}</span>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function Projects() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs text-night-400">Annual savings</p>
-                    <p className="text-xl font-black text-solar-500">{p.saving}</p>
+                    <p className="text-xl font-black text-night-900">{p.saving}</p>
                   </div>
                   <Link to="/contact" className="btn-primary text-xs py-2 px-4">
                     Similar Project

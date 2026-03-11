@@ -4,6 +4,7 @@ import StatsBar from '../sections/StatsBar'
 import AboutVision from '../sections/AboutVision'
 import ServicesOverview from '../sections/ServicesOverview'
 import WhyChooseUs from '../sections/WhyChooseUs'
+import OurProcess from '../sections/OurProcess'
 import ProductsShowcase from '../sections/ProductsShowcase'
 import SolarCalculator from '../sections/SolarCalculator'
 import ProjectsGallery from '../sections/ProjectsGallery'
@@ -20,6 +21,7 @@ export default function Home() {
       <AboutVision />
       <ServicesOverview />
       <WhyChooseUs />
+      <OurProcess />
       <ProductsShowcase />
       <SolarCalculator />
       <ProjectsGallery />

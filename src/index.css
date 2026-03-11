@@ -14,11 +14,16 @@
   * {
     box-sizing: border-box;
   }
+
+  /* Use Outfit for all headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-solar-500 text-white px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide hover:bg-solar-600 transition-all duration-300 hover:shadow-lg hover:shadow-solar-500/30 hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center gap-2 bg-night-900 text-white px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide hover:bg-night-800 transition-all duration-300 hover:shadow-lg hover:shadow-night-900/20 hover:-translate-y-0.5 active:translate-y-0;
   }
 
   .btn-outline {
@@ -26,16 +31,16 @@
   }
 
   .btn-outline-white {
-    @apply inline-flex items-center gap-2 border-2 border-white text-white px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide hover:bg-white hover:text-night-900 transition-all duration-300;
+    @apply inline-flex items-center gap-2 border-2 border-white/60 text-white px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide hover:bg-white hover:text-night-900 transition-all duration-300;
   }
 
   .section-tag {
-    @apply inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-solar-600 mb-4;
+    @apply inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-night-400 mb-4;
   }
 
   .section-tag::before {
     content: '';
-    @apply block w-6 h-px bg-solar-500;
+    @apply block w-6 h-px bg-night-400;
   }
 
   .card-hover {
@@ -67,13 +72,13 @@
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #f5f5f5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #f59e0b;
+  background: #a3a3a3;
   border-radius: 3px;
 }
 
@@ -103,16 +108,16 @@
   animation: countUp 0.6s ease-out forwards;
 }
 
-/* Gradient text */
+/* Gradient text — subtle monochrome */
 .gradient-text {
-  background: linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #525252 0%, #171717 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-solar {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #a3a3a3 0%, #737373 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -122,21 +127,32 @@
 .hero-overlay {
   background: linear-gradient(
     to bottom,
-    rgba(2, 6, 23, 0.3) 0%,
-    rgba(2, 6, 23, 0.1) 40%,
-    rgba(2, 6, 23, 0.6) 100%
+    rgba(10, 10, 10, 0.15) 0%,
+    rgba(10, 10, 10, 0.05) 40%,
+    rgba(10, 10, 10, 0.55) 100%
   );
 }
 
 /* Card glass */
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255,255,255,0.9);
 }
 
-/* Solar glow */
+/* Solar glow — now a subtle neutral shadow */
 .solar-glow {
-  box-shadow: 0 0 40px rgba(245, 158, 11, 0.15), 0 20px 60px rgba(245, 158, 11, 0.1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08), 0 20px 60px rgba(0, 0, 0, 0.06);
+}
+
+/* Hero animation keyframes (referenced in inline styles) */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

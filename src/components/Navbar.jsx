@@ -40,19 +40,19 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
             <div className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 ${
-              transparent ? 'bg-white/20 backdrop-blur-sm' : 'bg-solar-500'
+              transparent ? 'bg-white/20 backdrop-blur-sm' : 'bg-night-900'
             }`}>
               <Sun className={`w-5 h-5 transition-colors duration-300 ${transparent ? 'text-white' : 'text-white'}`} strokeWidth={2.5} />
             </div>
             <div>
-              <span className={`font-black text-xl tracking-tight leading-none block transition-colors duration-300 ${transparent ? 'text-white' : 'text-night-900'}`}>
-                SURYA<span className="text-solar-500">TECH</span>
+              <span className={`font-display font-black text-xl tracking-tight leading-none block transition-colors duration-300 ${transparent ? 'text-white' : 'text-night-900'}`}>
+                SURYA<span className={`${transparent ? 'text-white/70' : 'text-night-400'}`}>TECH</span>
               </span>
-              <span className={`text-[9px] font-semibold tracking-[0.18em] uppercase leading-none transition-colors duration-300 ${transparent ? 'text-white/70' : 'text-night-400'}`}>Solar Solutions</span>
+              <span className={`text-[9px] font-semibold tracking-[0.18em] uppercase leading-none transition-colors duration-300 ${transparent ? 'text-white/50' : 'text-night-400'}`}>Solar Solutions</span>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav — pill-shaped like reference */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map(link => (
               <Link
@@ -61,11 +61,11 @@ export default function Navbar() {
                 className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                   location.pathname === link.path
                     ? transparent
-                      ? 'text-solar-300 bg-white/10'
-                      : 'text-solar-600 bg-solar-50'
+                      ? 'text-white bg-white/15 border border-white/30'
+                      : 'text-night-900 bg-night-100 border border-night-200'
                     : transparent
-                      ? 'text-white/80 hover:text-white hover:bg-white/10'
-                      : 'text-night-600 hover:text-night-900 hover:bg-night-50'
+                      ? 'text-white/70 hover:text-white hover:bg-white/10'
+                      : 'text-night-500 hover:text-night-900 hover:bg-night-50'
                 }`}
               >
                 {link.label}
@@ -75,11 +75,11 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+917312345678" className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-300 ${transparent ? 'text-white/80 hover:text-white' : 'text-night-600 hover:text-night-900'}`}>
+            <a href="tel:+917312345678" className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-300 ${transparent ? 'text-white/70 hover:text-white' : 'text-night-500 hover:text-night-900'}`}>
               <Phone className="w-3.5 h-3.5" />
               +91 731 234 5678
             </a>
-            <Link to="/contact" className="btn-primary text-xs py-3 px-5 shadow-solar-500/20 shadow-lg">
+            <Link to="/contact" className="btn-primary text-xs py-3 px-5">
               Get Free Quote
             </Link>
           </div>
@@ -110,8 +110,8 @@ export default function Navbar() {
                     to={link.path}
                     className={`px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                       location.pathname === link.path
-                        ? 'bg-solar-50 text-solar-600 font-semibold'
-                        : 'text-night-700 hover:bg-night-50'
+                        ? 'bg-night-100 text-night-900 font-semibold'
+                        : 'text-night-600 hover:bg-night-50'
                     }`}
                   >
                     {link.label}
@@ -121,16 +121,16 @@ export default function Navbar() {
             </div>
             <div className="border-t border-night-100 pt-6 flex flex-col gap-3">
               <a href="tel:+917312345678" className="flex items-center gap-3 px-4 py-3 rounded-xl bg-night-50 text-night-700 font-medium text-sm">
-                <Phone className="w-4 h-4 text-solar-500" />
+                <Phone className="w-4 h-4 text-night-400" />
                 +91 731 234 5678
               </a>
               <Link to="/contact" className="btn-primary justify-center">
                 Get Free Quote
               </Link>
             </div>
-            <div className="mt-8 p-4 bg-solar-50 rounded-2xl border border-solar-100">
-              <p className="text-xs text-solar-700 font-semibold">Indore's #1 Solar Installer</p>
-              <p className="text-xs text-night-500 mt-1">Serving MP since 2012</p>
+            <div className="mt-8 p-4 bg-night-50 rounded-2xl border border-night-200">
+              <p className="text-xs text-night-600 font-semibold">Indore's #1 Solar Installer</p>
+              <p className="text-xs text-night-400 mt-1">Serving MP since 2012</p>
             </div>
           </div>
         </div>

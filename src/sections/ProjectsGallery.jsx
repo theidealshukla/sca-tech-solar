@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { MapPin, Zap, ArrowUpRight, ArrowRight } from 'lucide-react'
 
@@ -54,12 +54,12 @@ export default function ProjectsGallery() {
             <p className="section-tag">Latest Projects</p>
             <h2 className="font-black text-night-900 leading-tight" style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)', letterSpacing: '-0.03em' }}>
               We give growers & businesses{' '}
-              <span className="font-display italic text-solar-500">real energy independence.</span>
+              <span className="font-light text-night-400">real energy independence.</span>
             </h2>
           </div>
           <Link to="/projects" className="inline-flex items-center gap-2 text-sm font-bold text-night-900 whitespace-nowrap group self-start md:self-auto">
             All projects
-            <span className="w-9 h-9 rounded-full border-2 border-night-200 flex items-center justify-center group-hover:bg-solar-500 group-hover:border-solar-500 group-hover:text-white transition-all duration-300">
+            <span className="w-9 h-9 rounded-full border-2 border-night-200 flex items-center justify-center group-hover:bg-night-900 group-hover:border-night-900 group-hover:text-white transition-all duration-300">
               <ArrowRight className="w-4 h-4" />
             </span>
           </Link>
@@ -78,16 +78,16 @@ export default function ProjectsGallery() {
               <div className="absolute inset-0 p-5 flex flex-col justify-end">
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <p className="text-xs font-bold text-solar-400 tracking-wider uppercase mb-1">{p.type}</p>
+                    <p className="text-xs font-bold text-white/50 tracking-wider uppercase mb-1">{p.type}</p>
                     <h3 className="text-white font-black text-base md:text-lg leading-tight">{p.title}</h3>
                     <div className="flex items-center gap-1 mt-1.5">
-                      <MapPin className="w-3 h-3 text-white/50" />
-                      <p className="text-white/60 text-xs">{p.location}</p>
+                      <MapPin className="w-3 h-3 text-white/40" />
+                      <p className="text-white/50 text-xs">{p.location}</p>
                     </div>
                   </div>
-                  <div className="bg-solar-500 rounded-xl px-3 py-2 flex items-center gap-1.5 flex-shrink-0">
-                    <Zap className="w-3 h-3 text-white" />
-                    <span className="text-white text-xs font-black">{p.capacity}</span>
+                  <div className="bg-white rounded-xl px-3 py-2 flex items-center gap-1.5 flex-shrink-0">
+                    <Zap className="w-3 h-3 text-night-900" />
+                    <span className="text-night-900 text-xs font-black">{p.capacity}</span>
                   </div>
                 </div>
               </div>
@@ -98,10 +98,10 @@ export default function ProjectsGallery() {
           ))}
         </div>
 
-        {/* Bottom tag row — like reference */}
+        {/* Bottom tag row */}
         <div className="mt-10 flex flex-wrap gap-3 justify-center">
           {['Megawatt Capacity', 'Increasing Productivity', 'Solar Panel Service', 'Noble Area', 'A Responsible Corporate'].map((tag, i) => (
-            <span key={i} className="px-4 py-2 rounded-full border border-night-200 text-night-600 text-sm font-medium hover:bg-night-900 hover:text-white hover:border-night-900 transition-all duration-300 cursor-pointer">
+            <span key={i} className="px-4 py-2 rounded-full border border-night-200 text-night-500 text-sm font-medium hover:bg-night-900 hover:text-white hover:border-night-900 transition-all duration-300 cursor-pointer">
               {tag}
             </span>
           ))}

@@ -16,7 +16,7 @@ export default function ContactSection() {
         <div className="text-center mb-16">
           <p className="section-tag mx-auto justify-center">Get Started</p>
           <h2 className="font-black text-night-900 leading-tight" style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)', letterSpacing: '-0.03em' }}>
-            Book a free solar survey — <span className="font-display italic text-solar-500">no obligation.</span>
+            Book a free solar survey — <span className="font-light text-night-400">no obligation.</span>
           </h2>
           <p className="text-night-500 mt-4 max-w-xl mx-auto">
             Our expert will visit your site, assess your roof, check your bills and give you an exact quote — completely free of charge.
@@ -32,9 +32,9 @@ export default function ContactSection() {
               { icon: MapPin, label: 'Office', value: '42, Vijay Nagar Main Rd', sub: 'Indore, MP — 452010', href: '#' },
               { icon: Clock, label: 'Survey Hours', value: '9:00 AM – 6:00 PM', sub: 'Monday to Saturday', href: '#' },
             ].map(({ icon: Icon, label, value, sub, href }) => (
-              <a key={label} href={href} className="flex items-start gap-4 p-5 bg-white rounded-2xl border border-night-100 hover:border-solar-200 hover:shadow-md transition-all duration-300 group">
-                <div className="w-11 h-11 bg-solar-50 rounded-xl flex items-center justify-center group-hover:bg-solar-500 transition-colors duration-300 flex-shrink-0">
-                  <Icon className="w-5 h-5 text-solar-500 group-hover:text-white transition-colors duration-300" />
+              <a key={label} href={href} className="flex items-start gap-4 p-5 bg-white rounded-2xl border border-night-100 hover:border-night-300 hover:shadow-md transition-all duration-300 group">
+                <div className="w-11 h-11 bg-night-100 rounded-xl flex items-center justify-center group-hover:bg-night-900 transition-colors duration-300 flex-shrink-0">
+                  <Icon className="w-5 h-5 text-night-500 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-night-400 uppercase tracking-wider mb-0.5">{label}</p>
@@ -48,18 +48,18 @@ export default function ContactSection() {
               <p className="text-white font-black text-lg mb-2">Service Areas</p>
               <div className="flex flex-wrap gap-2">
                 {['Indore', 'Bhopal', 'Ujjain', 'Dewas', 'Ratlam', 'Dhar', 'Pithampur', 'Mhow'].map(city => (
-                  <span key={city} className="px-2.5 py-1 bg-white/10 rounded-full text-white/70 text-xs font-medium">{city}</span>
+                  <span key={city} className="px-2.5 py-1 bg-white/10 rounded-full text-white/60 text-xs font-medium">{city}</span>
                 ))}
               </div>
             </div>
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-3 bg-white rounded-3xl p-8 md:p-10 border border-night-100 shadow-xl shadow-night-100">
+          <div className="lg:col-span-3 bg-white rounded-3xl p-8 md:p-10 border border-night-100 shadow-xl shadow-night-100/50">
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-12">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-5">
-                  <CheckCircle2 className="w-8 h-8 text-green-500" />
+                <div className="w-16 h-16 bg-night-100 rounded-full flex items-center justify-center mb-5">
+                  <CheckCircle2 className="w-8 h-8 text-night-900" />
                 </div>
                 <h3 className="text-2xl font-black text-night-900 mb-2">Survey Booked!</h3>
                 <p className="text-night-500 max-w-sm">Our solar expert will call you within 2 hours to confirm your free site survey appointment.</p>
@@ -87,7 +87,7 @@ export default function ContactSection() {
                         required={field.required}
                         value={form[field.id]}
                         onChange={e => setForm({ ...form, [field.id]: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-night-200 focus:border-solar-400 focus:ring-2 focus:ring-solar-100 outline-none text-sm text-night-900 placeholder-night-300 transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-night-200 focus:border-night-400 focus:ring-2 focus:ring-night-100 outline-none text-sm text-night-900 placeholder-night-300 transition-all"
                       />
                     </div>
                   ))}
@@ -103,8 +103,8 @@ export default function ContactSection() {
                         onClick={() => setForm({ ...form, type: t })}
                         className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all duration-300 ${
                           form.type === t
-                            ? 'bg-solar-500 text-white border-solar-500'
-                            : 'bg-white text-night-600 border-night-200 hover:border-solar-300'
+                            ? 'bg-night-900 text-white border-night-900'
+                            : 'bg-white text-night-600 border-night-200 hover:border-night-400'
                         }`}
                       >
                         {t}
@@ -120,7 +120,7 @@ export default function ContactSection() {
                     placeholder="My monthly MPEB bill is around ₹3,000. I have a 2-storey house with a flat roof..."
                     value={form.message}
                     onChange={e => setForm({ ...form, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-night-200 focus:border-solar-400 focus:ring-2 focus:ring-solar-100 outline-none text-sm text-night-900 placeholder-night-300 transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-night-200 focus:border-night-400 focus:ring-2 focus:ring-night-100 outline-none text-sm text-night-900 placeholder-night-300 transition-all resize-none"
                   />
                 </div>
 
