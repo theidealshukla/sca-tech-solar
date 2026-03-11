@@ -28,7 +28,7 @@ export default function ContactSection() {
           <div className="lg:col-span-2 flex flex-col gap-5">
             {[
               { icon: Phone, label: 'Call Us', value: '+91 731 234 5678', sub: 'Mon–Sat, 9am–7pm IST', href: 'tel:+917312345678' },
-              { icon: Mail, label: 'Email', value: 'hello@suryatechsolar.in', sub: 'We reply within 2 hours', href: 'mailto:hello@suryatechsolar.in' },
+              { icon: Mail, label: 'Email', value: 'hello@scatechsolar.in', sub: 'We reply within 2 hours', href: 'mailto:hello@scatechsolar.in' },
               { icon: MapPin, label: 'Office', value: '42, Vijay Nagar Main Rd', sub: 'Indore, MP — 452010', href: '#' },
               { icon: Clock, label: 'Survey Hours', value: '9:00 AM – 6:00 PM', sub: 'Monday to Saturday', href: '#' },
             ].map(({ icon: Icon, label, value, sub, href }) => (

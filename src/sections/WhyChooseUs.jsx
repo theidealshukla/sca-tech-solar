@@ -78,7 +78,7 @@ export default function WhyChooseUs() {
               className="font-black text-night-900 leading-[1.08]"
               style={{ fontSize: 'clamp(2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.03em' }}
             >
-              The most trusted solar installer in Central India.
+              We are The most trusted solar installer in Central India.
             </h2>
           </div>
           <p className="text-night-400 text-base md:text-lg leading-relaxed lg:max-w-md lg:ml-auto">

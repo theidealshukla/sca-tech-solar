@@ -44,10 +44,10 @@ function CountUp({ target, suffix, duration = 2000 }) {
 
 export default function StatsBar() {
   return (
-    <section id="stats" className="bg-night-950 py-12">
+    <section id="stats" className="bg-night-950 py-6 md:py-12">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         {/* Marquee strip above stats */}
-        <div className="overflow-hidden mb-10 opacity-20">
+        <div className="overflow-hidden mb-6 md:mb-10 opacity-20">
           <div className="marquee-inner whitespace-nowrap">
             {[...Array(2)].map((_, idx) => (
               <span key={idx} className="inline-flex items-center gap-6 text-white text-xs font-bold tracking-[0.2em] uppercase">
@@ -59,7 +59,21 @@ export default function StatsBar() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-white/5 rounded-2xl overflow-hidden">
+        {/* Mobile: horizontal scroll strip | Desktop: grid */}
+        <div className="md:hidden flex gap-px bg-white/5 rounded-2xl overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+          {stats.map((s, i) => (
+            <div key={i} className="bg-night-950 px-5 py-5 flex flex-col items-start gap-0.5 min-w-[140px] snap-center flex-shrink-0">
+              <p className="text-2xl font-black text-white leading-none font-display">
+                <CountUp target={s.value} suffix={s.suffix} />
+              </p>
+              <p className="text-xs font-semibold text-white/50 mt-1">{s.label}</p>
+              <p className="text-[10px] text-night-600">{s.sub}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop grid */}
+        <div className="hidden md:grid grid-cols-3 lg:grid-cols-5 gap-px bg-white/5 rounded-2xl overflow-hidden">
           {stats.map((s, i) => (
             <div key={i} className="bg-night-950 px-6 py-8 flex flex-col items-start gap-1 group hover:bg-night-900 transition-colors duration-300">
               <p className="text-3xl md:text-4xl font-black text-white leading-none font-display">

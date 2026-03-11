@@ -28,7 +28,7 @@ export default function About() {
           <div className="absolute inset-0 bg-gradient-to-t from-night-950 via-night-950/50 to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto px-5 md:px-8 pb-20">
-          <p className="section-tag text-white/40 mb-3">About SuryaTech</p>
+          <p className="section-tag text-white/40 mb-3">About SCA Tech</p>
           <h1 className="font-black text-white leading-tight" style={{ fontSize: 'clamp(2.5rem, 7vw, 7rem)', letterSpacing: '-0.03em' }}>
             Conserving Resources.<br />
             <span className="font-light text-white/40">Improving Life.</span>
@@ -46,7 +46,7 @@ export default function About() {
                 To make clean solar energy accessible to every family and business in Central India.
               </h2>
               <p className="text-night-500 leading-relaxed mb-4">
-                SuryaTech was born from a simple observation: Indore gets over 300 sunny days a year, yet most households pay enormous electricity bills. We set out to change that — one rooftop at a time.
+                SCA Tech was born from a simple observation: Indore gets over 300 sunny days a year, yet most households pay enormous electricity bills. We set out to change that — one rooftop at a time.
               </p>
               <p className="text-night-500 leading-relaxed">
                 Today we're Madhya Pradesh's most trusted solar installer, having delivered over 18 MW of clean capacity across 1,200+ projects. But our work is just beginning — our 2030 target is 10,000 installations.

@@ -59,9 +59,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-night-950/60 via-night-950/25 to-transparent" />
 
       {/* Content */}
-      <div className="relative h-full max-w-7xl mx-auto px-5 md:px-8 flex flex-col pb-8 md:pb-20 pt-[80px] md:pt-[100px]">
-        {/* Pushes content to the bottom if there's extra height, but collapses safely if not */}
-        <div className="flex-1 min-h-[20px] md:min-h-[40px]" />
+      <div className="relative h-full max-w-7xl mx-auto px-5 md:px-8 flex flex-col pb-8 md:pb-20 pt-[70px] md:pt-[100px]">
+        {/* Pushes content to the bottom — smaller on mobile to reduce gap */}
+        <div className="flex-1 min-h-[10px] max-h-[80px] md:min-h-[40px] md:max-h-none" />
         <div className="max-w-3xl">
           {/* Tag */}
           <div

@@ -39,7 +39,7 @@ const services = [
     icon: ShieldCheck,
     title: 'Subsidy & Documentation',
     tagline: 'We handle all the paperwork for you.',
-    desc: "Government subsidy registration, DISCOM approvals, net metering applications — a bureaucratic nightmare that we've mastered. Free for all SuryaTech installations.",
+    desc: "Government subsidy registration, DISCOM approvals, net metering applications — a bureaucratic nightmare that we've mastered. Free for all SCA Tech installations.",
     points: ['PM Surya Ghar portal registration', 'MPEZ DISCOM net meter filing', 'Subsidy status tracking', 'Bank subsidy disbursement follow-up', 'Legal documentation support', 'Zero extra charges'],
     img: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=85&auto=format',
   },
@@ -71,7 +71,7 @@ export default function Services() {
             Complete Solar<br /><span className="font-light text-white/40">Solutions.</span>
           </h1>
           <p className="text-night-400 max-w-xl text-lg leading-relaxed mb-8">
-            From a single rooftop to industrial mega-parks — SuryaTech delivers turnkey solar solutions backed by 12 years of Madhya Pradesh expertise.
+            From a single rooftop to industrial mega-parks — SCA Tech delivers turnkey solar solutions backed by 12 years of Madhya Pradesh expertise.
           </p>
           <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-night-900 px-7 py-3.5 rounded-full font-semibold text-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
             Book Free Survey <ArrowRight className="w-4 h-4" />

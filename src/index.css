@@ -15,9 +15,9 @@
     box-sizing: border-box;
   }
 
-  /* Use Outfit for all headings */
+  /* Use Inter for all headings — heavier weights + tight tracking for impact */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Outfit', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 }
 

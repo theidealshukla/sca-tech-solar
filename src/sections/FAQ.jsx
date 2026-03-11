@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: 'How do I apply for the PM Surya Ghar subsidy?',
-    a: 'SuryaTech handles the entire subsidy process at no extra cost. We register you on the PM Surya Ghar portal, coordinate with MPEZ for net meter, and ensure the subsidy is credited directly to your bank account.',
+    a: 'SCA Tech handles the entire subsidy process at no extra cost. We register you on the PM Surya Ghar portal, coordinate with MPEZ for net meter, and ensure the subsidy is credited directly to your bank account.',
   },
   {
     q: 'How long does installation take?',
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: 'What warranties do you provide?',
-    a: 'We offer: 25-year linear performance warranty on Tier 1 panels, 10-year product warranty on panels, 5–10 year warranty on inverters, and 1-year installation workmanship warranty from SuryaTech with ongoing support.',
+    a: 'We offer: 25-year linear performance warranty on Tier 1 panels, 10-year product warranty on panels, 5–10 year warranty on inverters, and 1-year installation workmanship warranty from SCA Tech with ongoing support.',
   },
   {
     q: 'Can I get solar installed on a rented property?',

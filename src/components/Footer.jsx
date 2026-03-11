@@ -42,7 +42,7 @@ export default function Footer() {
                 <Sun className="w-5 h-5 text-white" strokeWidth={2.5} />
               </div>
               <div>
-                <span className="font-display font-black text-2xl tracking-tight leading-none block">SURYA<span className="text-white/40">TECH</span></span>
+                <span className="font-display font-black text-2xl tracking-tight leading-none block">SCA <span className="text-white/40">TECH</span></span>
                 <span className="text-[9px] font-semibold tracking-[0.18em] uppercase text-white/30">Solar Solutions · Indore</span>
               </div>
             </Link>
@@ -54,9 +54,9 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-night-500 flex-shrink-0" />
                 +91 731 234 5678
               </a>
-              <a href="mailto:hello@suryatechsolar.in" className="flex items-center gap-3 text-sm text-night-400 hover:text-white transition-colors">
+              <a href="mailto:hello@scatechsolar.in" className="flex items-center gap-3 text-sm text-night-400 hover:text-white transition-colors">
                 <Mail className="w-4 h-4 text-night-500 flex-shrink-0" />
-                hello@suryatechsolar.in
+                hello@scatechsolar.in
               </a>
               <div className="flex items-start gap-3 text-sm text-night-400">
                 <MapPin className="w-4 h-4 text-night-500 flex-shrink-0 mt-0.5" />
@@ -109,7 +109,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
         <p className="text-night-600 text-xs">
-          © 2024 SuryaTech Solar Pvt. Ltd. All rights reserved. · CIN: U40100MP2012PTC12345
+          © 2024 SCA Tech Solar Pvt. Ltd. All rights reserved. · CIN: U40100MP2012PTC12345
         </p>
         <div className="flex items-center gap-5">
           <a href="#" className="text-night-600 text-xs hover:text-night-400 transition-colors">Privacy Policy</a>
@@ -121,7 +121,7 @@ export default function Footer() {
       {/* Big brand text — like reference */}
       <div className="overflow-hidden border-t border-white/5">
         <p className="font-display text-[clamp(3rem,18vw,14rem)] font-black text-white/[0.04] leading-none tracking-tighter select-none text-center pb-4 whitespace-nowrap">
-          SURYATECH
+          SCA TECH
         </p>
       </div>
     </footer>

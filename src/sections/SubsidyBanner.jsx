@@ -29,7 +29,7 @@ export default function SubsidyBanner() {
               Get up to ₹78,000 Government Subsidy on your solar installation.
             </h2>
             <p className="text-white/50 text-base md:text-lg leading-relaxed mb-8">
-              The Government of India's PM Surya Ghar: Muft Bijli Yojana offers direct benefit transfer subsidies to all eligible households. SuryaTech handles the entire registration and claim process for you — for free.
+              The Government of India's PM Surya Ghar: Muft Bijli Yojana offers direct benefit transfer subsidies to all eligible households. SCA Tech handles the entire registration and claim process for you — for free.
             </p>
             <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-night-900 px-7 py-3.5 rounded-full font-bold text-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
               Claim Your Subsidy — Free Consultation

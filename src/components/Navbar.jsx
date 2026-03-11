@@ -46,7 +46,7 @@ export default function Navbar() {
             </div>
             <div>
               <span className={`font-display font-black text-xl tracking-tight leading-none block transition-colors duration-300 ${transparent ? 'text-white' : 'text-night-900'}`}>
-                SURYA<span className={`${transparent ? 'text-white/70' : 'text-night-400'}`}>TECH</span>
+                SCA <span className={`${transparent ? 'text-white/70' : 'text-night-400'}`}>TECH</span>
               </span>
               <span className={`text-[9px] font-semibold tracking-[0.18em] uppercase leading-none transition-colors duration-300 ${transparent ? 'text-white/50' : 'text-night-400'}`}>Solar Solutions</span>
             </div>
