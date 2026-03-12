@@ -221,8 +221,8 @@ export default function ServicesOverview() {
 
         {/* Main grid: SVG left, list right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-          {/* Left — SVG illustration */}
-          <div className="relative">
+          {/* Left \u2014 SVG illustration (Desktop Only) */}
+          <div className="hidden lg:block relative sticky top-32">
             <div
               key={active}
               className={`svg-illustration text-night-400 transition-opacity duration-500 ${isVisible ? 'is-visible' : ''}`}
@@ -263,10 +263,21 @@ export default function ServicesOverview() {
                     {/* Collapsible description */}
                     <div
                       className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        i === active ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'
+                        i === active ? 'max-h-[600px] opacity-100 mt-2' : 'max-h-0 opacity-0'
                       }`}
                     >
                       <p className="text-sm text-night-400 leading-relaxed pr-4">{svc.desc}</p>
+                      
+                      {/* Mobile SVG Illustration */}
+                      {i === active && (
+                        <div 
+                          key={`mobile-svg-${active}`}
+                          className="lg:hidden mt-6 flex justify-center svg-illustration is-visible text-night-500"
+                          style={{ height: '220px', width: '100%' }}
+                        >
+                          <SvgComponent />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

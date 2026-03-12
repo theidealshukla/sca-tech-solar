@@ -52,8 +52,8 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav — pill-shaped like reference */}
-          <div className="hidden lg:flex items-center gap-1">
+          {/* Desktop Nav \u2014 pill-shaped like reference */}
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map(link => (
               <Link
                 key={link.path}
@@ -74,7 +74,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3">
             <a href="tel:+917312345678" className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-300 ${transparent ? 'text-white/70 hover:text-white' : 'text-night-500 hover:text-night-900'}`}>
               <Phone className="w-3.5 h-3.5" />
               +91 731 234 5678
@@ -87,7 +87,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`lg:hidden w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
+            className={`md:hidden w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
               transparent ? 'text-white bg-white/10' : 'text-night-900 bg-night-100'
             }`}
           >
@@ -97,7 +97,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`fixed inset-0 z-40 md:hidden transition-all duration-500 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         <div className="absolute inset-0 bg-night-950/80 backdrop-blur-md" onClick={() => setMenuOpen(false)} />
         <div className={`absolute top-0 right-0 h-full w-80 bg-white transition-transform duration-500 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="p-6 pt-20">

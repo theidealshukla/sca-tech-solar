@@ -84,84 +84,42 @@ export default function AboutVision() {
           </p>
         </div>
 
-        {/* ─── Cards: horizontal scroll on mobile, grid on desktop ─── */}
-
-        {/* Mobile nav buttons */}
-        <div className="flex md:hidden items-center justify-between mb-4">
-          <p className="text-xs font-bold tracking-widest uppercase text-night-400">Our Solutions</p>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => scrollTo('left')}
-              disabled={scrollIdx === 0}
-              className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
-                scrollIdx === 0
-                  ? 'border-night-200 text-night-300 cursor-default'
-                  : 'border-night-900 text-night-900 hover:bg-night-900 hover:text-white'
-              }`}
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => scrollTo('right')}
-              disabled={scrollIdx === cards.length - 1}
-              className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
-                scrollIdx === cards.length - 1
-                  ? 'border-night-200 text-night-300 cursor-default'
-                  : 'border-night-900 text-night-900 hover:bg-night-900 hover:text-white'
-              }`}
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-            {/* Dots */}
-            <div className="flex items-center gap-1.5 ml-2">
-              {cards.map((_, i) => (
-                <div
-                  key={i}
-                  className={`rounded-full transition-all duration-300 ${
-                    i === scrollIdx ? 'w-5 h-1.5 bg-night-900' : 'w-1.5 h-1.5 bg-night-300'
-                  }`}
-                />
-              ))}
-            </div>
+        {/* Mobile: Our Solutions Title & Horizontal Scroll */}
+        <div className="md:hidden">
+          <p className="text-xs font-bold tracking-widest uppercase text-night-400 mb-4">Our Solutions</p>
+          <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 -mx-5 px-5">
+            {cards.map((card, i) => (
+              <div
+                key={i}
+                className={`rounded-2xl border overflow-hidden flex-shrink-0 snap-center flex flex-col ${card.color}`}
+                style={{ width: '80vw', minWidth: '280px', maxWidth: '340px' }}
+              >
+                <div className="h-40 flex-shrink-0 overflow-hidden">
+                  <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-5 flex flex-col flex-grow">
+                  <span className={`text-[10px] font-bold tracking-widest uppercase ${card.accent}`}>{card.pill}</span>
+                  <h3 className={`text-lg font-black mt-2 mb-1 ${card.dark ? 'text-white' : 'text-night-900'}`}>{card.title}</h3>
+                  <p className={`text-2xl font-black font-display mb-3 ${card.dark ? 'text-white/60' : 'text-night-900'}`}>{card.value}</p>
+                  <p className={`text-sm leading-relaxed mt-auto ${card.dark ? 'text-night-500' : 'text-night-500'}`}>{card.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Mobile: horizontal scroll */}
-        <div
-          ref={scrollRef}
-          className="md:hidden flex gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-2"
-        >
-          {cards.map((card, i) => (
-            <div
-              key={i}
-              className={`rounded-2xl border overflow-hidden flex-shrink-0 snap-center ${card.color}`}
-              style={{ width: 'calc(85vw - 20px)', minWidth: '260px', maxWidth: '320px' }}
-            >
-              <div className="h-32 overflow-hidden">
-                <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
-              </div>
-              <div className="p-4">
-                <span className={`text-[10px] font-bold tracking-widest uppercase ${card.accent}`}>{card.pill}</span>
-                <h3 className={`text-base font-black mt-1 mb-0.5 ${card.dark ? 'text-white' : 'text-night-900'}`}>{card.title}</h3>
-                <p className={`text-xl font-black font-display mb-2 ${card.dark ? 'text-white/60' : 'text-night-900'}`}>{card.value}</p>
-                <p className={`text-xs leading-relaxed ${card.dark ? 'text-night-500' : 'text-night-500'}`}>{card.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Desktop: 3-column grid (unchanged) */}
+        {/* Desktop: 3-column grid */}
         <div className="hidden md:grid grid-cols-3 gap-5">
           {cards.map((card, i) => (
-            <div key={i} className={`rounded-2xl border overflow-hidden group card-hover ${card.color}`}>
-              <div className="h-44 overflow-hidden">
+            <div key={i} className={`rounded-2xl border overflow-hidden group card-hover flex flex-col ${card.color}`}>
+              <div className="h-44 md:h-52 overflow-hidden flex-shrink-0">
                 <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <span className={`text-xs font-bold tracking-widest uppercase ${card.accent}`}>{card.pill}</span>
                 <h3 className={`text-xl font-black mt-2 mb-1 ${card.dark ? 'text-white' : 'text-night-900'}`}>{card.title}</h3>
                 <p className={`text-3xl font-black font-display mb-3 ${card.dark ? 'text-white/60' : 'text-night-900'}`}>{card.value}</p>
-                <p className={`text-sm leading-relaxed ${card.dark ? 'text-night-500' : 'text-night-500'}`}>{card.desc}</p>
+                <p className={`text-sm leading-relaxed mt-auto ${card.dark ? 'text-night-500' : 'text-night-500'}`}>{card.desc}</p>
               </div>
             </div>
           ))}

@@ -10,6 +10,7 @@ const services = [
     desc: 'Complete end-to-end rooftop solar solutions for homes in Indore and surrounding areas. We handle site survey, design, installation, DISCOM net metering, and PM Surya Ghar subsidy processing.',
     points: ['On-grid, Off-grid & Hybrid systems', '3 kW to 10 kW capacity range', 'PM Surya Ghar subsidy up to ₹78,000', 'MPEZ net metering registration included', '25-year performance warranty', 'AMC plans available'],
     img: 'https://images.unsplash.com/photo-1615400610825-7f1b9d573c09?w=800&q=85&auto=format',
+    color: 'bg-solar-50',
   },
   {
     icon: Building2,
@@ -18,6 +19,7 @@ const services = [
     desc: 'Solar solutions for offices, hospitals, schools, malls and retail outlets. Reduce peak demand charges, earn REC credits and hit ESG targets while cutting operating costs.',
     points: ['10 kW to 500 kW systems', 'Peer-to-peer energy trading', 'REC and carbon credit advisory', 'OPEX and CAPEX models available', 'Remote monitoring dashboard', 'Dedicated project manager'],
     img: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=85&auto=format',
+    color: 'bg-sky-50',
   },
   {
     icon: Factory,
@@ -26,6 +28,7 @@ const services = [
     desc: 'Ground-mount, rooftop and carport solar for factories, warehouses, cold storage and industrial parks across MP. We specialise in high-load industrial connections.',
     points: ['500 kW to 5 MW+ projects', 'Ground-mount & elevated carport', 'HT/LT connection expertise', 'PPA and third-party financing', 'Priority DISCOM liaison', 'Dedicated O&M team'],
     img: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=800&q=85&auto=format',
+    color: 'bg-night-50',
   },
   {
     icon: Wrench,
@@ -34,22 +37,25 @@ const services = [
     desc: 'Comprehensive AMC and O&M packages for existing solar plants. Remote monitoring, preventive maintenance, panel cleaning, inverter servicing and 24/7 fault response.',
     points: ['Annual Maintenance Contracts', 'Remote SCADA monitoring', 'Quarterly performance reports', 'Panel cleaning every 3 months', 'Inverter health checks', '4-hour fault response SLA'],
     img: 'https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?w=800&q=85&auto=format',
+    color: 'bg-green-50',
   },
   {
     icon: ShieldCheck,
     title: 'Subsidy & Documentation',
     tagline: 'We handle all the paperwork for you.',
-    desc: "Government subsidy registration, DISCOM approvals, net metering applications — a bureaucratic nightmare that we've mastered. Free for all SCA Tech installations.",
+    desc: 'Government subsidy registration, DISCOM approvals, net metering applications \u2014 a bureaucratic nightmare that we\'ve mastered.Free for all SuryaTech installations.',
     points: ['PM Surya Ghar portal registration', 'MPEZ DISCOM net meter filing', 'Subsidy status tracking', 'Bank subsidy disbursement follow-up', 'Legal documentation support', 'Zero extra charges'],
     img: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=85&auto=format',
+    color: 'bg-purple-50',
   },
   {
     icon: Zap,
     title: 'Battery Storage Solutions',
     tagline: 'Power through any outage.',
-    desc: "Lithium iron phosphate (LiFePO4) battery systems integrated with hybrid inverters. Designed for Indore's frequent summer outages and businesses needing uninterrupted power.",
+    desc: 'Lithium iron phosphate (LiFePO4) battery systems integrated with hybrid inverters. Designed for Indore\'s frequent summer outages and businesses needing uninterrupted power.',
     points: ['LiFePO4 batteries — 10+ year life', '5 kWh to 100 kWh systems', 'Smart load management', 'EV charging integration', 'Grid-independent operation', 'Scalable modular design'],
     img: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=85&auto=format',
+    color: 'bg-orange-50',
   },
 ]
 
@@ -63,17 +69,17 @@ export default function Services() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-night-950 via-night-950/90 to-night-950/60" />
         <div className="relative max-w-7xl mx-auto px-5 md:px-8">
-          <p className="section-tag text-white/40">
-            <span className="bg-white/30 w-6 h-px inline-block mr-2" />
+          <p className="section-tag text-solar-400">
+            <span className="bg-solar-500 w-6 h-px inline-block mr-2" />
             Our Services
           </p>
           <h1 className="font-black text-white leading-tight mt-2 mb-5" style={{ fontSize: 'clamp(2.5rem, 7vw, 7rem)', letterSpacing: '-0.03em' }}>
-            Complete Solar<br /><span className="font-light text-white/40">Solutions.</span>
+            Complete Solar<br /><span className="gradient-text-solar font-display italic">Solutions.</span>
           </h1>
-          <p className="text-night-400 max-w-xl text-lg leading-relaxed mb-8">
-            From a single rooftop to industrial mega-parks — SCA Tech delivers turnkey solar solutions backed by 12 years of Madhya Pradesh expertise.
+          <p className="text-night-300 max-w-xl text-lg leading-relaxed mb-8">
+            From a single rooftop to industrial mega-parks — SuryaTech delivers turnkey solar solutions backed by 12 years of Madhya Pradesh expertise.
           </p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-night-900 px-7 py-3.5 rounded-full font-semibold text-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
+          <Link to="/contact" className="btn-primary">
             Book Free Survey <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -88,7 +94,7 @@ export default function Services() {
               <div key={i} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                 <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-night-900 rounded-xl flex items-center justify-center">
+                    <div className="w-10 h-10 bg-solar-500 rounded-xl flex items-center justify-center">
                       <Icon className="w-5 h-5 text-white" strokeWidth={1.5} />
                     </div>
                     <p className="text-xs font-bold text-night-400 tracking-[0.18em] uppercase">0{i + 1} — {svc.title}</p>
@@ -100,7 +106,7 @@ export default function Services() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                     {svc.points.map(pt => (
                       <div key={pt} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-night-400 flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-solar-500 flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-night-600">{pt}</span>
                       </div>
                     ))}
