@@ -270,12 +270,14 @@ export default function ServicesOverview() {
                       
                       {/* Mobile SVG Illustration */}
                       {i === active && (
-                        <div 
-                          key={`mobile-svg-${active}`}
-                          className="lg:hidden mt-6 flex justify-center svg-illustration is-visible text-night-500"
-                          style={{ height: '220px', width: '100%' }}
-                        >
-                          <SvgComponent />
+                        <div className="lg:hidden mt-6">
+                          <div 
+                            key={`mobile-svg-${active}`}
+                            className="flex justify-center svg-illustration is-visible text-night-500"
+                            style={{ height: '220px', width: '100%' }}
+                          >
+                            <SvgComponent />
+                          </div>
                         </div>
                       )}
                     </div>

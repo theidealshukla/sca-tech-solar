@@ -60,16 +60,18 @@ export default function StatsBar() {
         </div>
 
         {/* Mobile: Horizontal scroll strip */}
-        <div className="md:hidden flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 -mx-5 px-5">
-          {stats.map((s, i) => (
-            <div key={i} className="bg-night-950 px-6 py-8 flex flex-col items-start min-w-[200px] snap-center flex-shrink-0 rounded-2xl border border-white/5">
-              <p className="text-3xl font-black text-white leading-none font-display mb-2">
-                <CountUp target={s.value} suffix={s.suffix} />
-              </p>
-              <p className="text-sm font-semibold text-white/50">{s.label}</p>
-              <p className="text-xs text-night-600 mt-1">{s.sub}</p>
-            </div>
-          ))}
+        <div className="md:hidden">
+          <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 -mx-5 px-5">
+            {stats.map((s, i) => (
+              <div key={i} className="bg-night-950 px-6 py-8 flex flex-col items-start min-w-[200px] snap-center flex-shrink-0 rounded-2xl border border-white/5">
+                <p className="text-3xl font-black text-white leading-none font-display mb-2">
+                  <CountUp target={s.value} suffix={s.suffix} />
+                </p>
+                <p className="text-sm font-semibold text-white/50">{s.label}</p>
+                <p className="text-xs text-night-600 mt-1">{s.sub}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Desktop: Grid */}

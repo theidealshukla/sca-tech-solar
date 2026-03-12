@@ -85,14 +85,16 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className={`md:hidden w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-              transparent ? 'text-white bg-white/10' : 'text-night-900 bg-night-100'
-            }`}
-          >
-            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          <div className="md:hidden">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                transparent ? 'text-white bg-white/10' : 'text-night-900 bg-night-100'
+              }`}
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </nav>
 
