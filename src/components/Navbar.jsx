@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Sun, Phone } from 'lucide-react'
+import { Menu, X, Sun, Phone, Lock } from 'lucide-react'
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -128,6 +128,10 @@ export default function Navbar() {
               </a>
               <Link to="/contact" className="btn-primary justify-center">
                 Get Free Quote
+              </Link>
+              <Link to="/admin" className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-night-900/5 border border-night-200 text-night-500 hover:text-night-900 hover:bg-night-100 transition-all text-sm font-medium">
+                <Lock className="w-3.5 h-3.5" />
+                Admin Login
               </Link>
             </div>
             <div className="mt-8 p-4 bg-night-50 rounded-2xl border border-night-200">

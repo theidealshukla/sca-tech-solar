@@ -118,6 +118,10 @@ export default function Hero() {
               <Play className="w-4 h-4 fill-current" />
               View Our Work
             </Link>
+            <Link to="/admin" className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/70 hover:text-white hover:bg-white/20 transition-all duration-300 text-sm font-semibold">
+              <Lock className="w-3.5 h-3.5" />
+              Admin
+            </Link>
           </div>
 
           {/* Badges */}
@@ -163,15 +167,6 @@ export default function Hero() {
         <ChevronDown className="w-5 h-5 animate-bounce" />
       </a>
 
-      {/* Admin Login */}
-      <Link
-        to="/admin"
-        className="absolute bottom-8 left-5 md:left-8 flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-white/30 hover:text-white/60 hover:bg-white/10 transition-all duration-300 text-[10px] font-medium tracking-wider uppercase opacity-0"
-        style={{ animation: 'fadeIn 1s 1.5s ease-out forwards' }}
-      >
-        <Lock className="w-3 h-3" />
-        Admin
-      </Link>
     </section>
   )
 }

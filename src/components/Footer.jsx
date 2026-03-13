@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Sun, Phone, Mail, MapPin, Facebook, Instagram, Youtube, Twitter, ArrowUpRight } from 'lucide-react'
+import { Sun, Phone, Mail, MapPin, Facebook, Instagram, Youtube, Twitter, ArrowUpRight, Lock } from 'lucide-react'
 
 const footerLinks = {
   Company: [
@@ -115,6 +115,10 @@ export default function Footer() {
           <a href="#" className="text-night-600 text-xs hover:text-night-400 transition-colors">Privacy Policy</a>
           <a href="#" className="text-night-600 text-xs hover:text-night-400 transition-colors">Terms of Service</a>
           <a href="#" className="text-night-600 text-xs hover:text-night-400 transition-colors">Sitemap</a>
+          <Link to="/admin" className="flex items-center gap-1.5 text-night-600 text-xs hover:text-night-400 transition-colors">
+            <Lock className="w-3 h-3" />
+            Admin Login
+          </Link>
         </div>
       </div>
 
