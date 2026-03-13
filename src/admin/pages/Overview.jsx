@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Users, UserPlus, TrendingUp, Target, ArrowUpRight } from 'lucide-react'
 import { getLeads, getStatsForDashboard, getLeadsByDay, getLeadsByType, getLeadsByCity } from '../data/mockLeads'
 
-// Simple inline mini-chart components (no external chart library needed)
-
 function AreaChart({ data }) {
   const max = Math.max(...data.map(d => d.count), 1)
   const w = 100
@@ -38,7 +36,7 @@ function DonutChart({ data }) {
   let cumulative = 0
 
   return (
-    <div className="relative w-36 h-36 mx-auto">
+    <div className="relative w-28 h-28 sm:w-36 sm:h-36 mx-auto">
       <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
         {data.map((d, i) => {
           const pct = (d.count / total) * 100
@@ -60,7 +58,7 @@ function DonutChart({ data }) {
         })}
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <p className="text-2xl font-black text-night-900">{total}</p>
+        <p className="text-xl sm:text-2xl font-black text-night-900">{total}</p>
         <p className="text-[10px] text-night-400 font-medium">Total</p>
       </div>
     </div>
@@ -75,7 +73,7 @@ function HorizontalBarChart({ data }) {
         <div key={d.city}>
           <div className="flex items-center justify-between text-xs mb-1">
             <span className="font-semibold text-night-700">{d.city}</span>
-            <span className="text-night-400">{d.total} leads · {d.converted} converted</span>
+            <span className="text-night-400">{d.total} leads · {d.converted} conv.</span>
           </div>
           <div className="h-2 bg-night-100 rounded-full overflow-hidden flex">
             <div className="h-full bg-night-900 rounded-full transition-all duration-700" style={{ width: `${(d.total / max) * 100}%` }} />
@@ -127,92 +125,90 @@ export default function Overview() {
   ]
 
   return (
-    <div className="space-y-6 max-w-[1400px]">
+    <div className="space-y-4 md:space-y-6 max-w-[1400px]">
       {/* Stat Cards */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
         {statCards.map((card, i) => (
           <div
             key={card.label}
-            className={`${card.color} rounded-2xl p-5 border border-night-100 opacity-0`}
+            className={`${card.color} rounded-2xl p-4 md:p-5 border border-night-100 opacity-0`}
             style={{ animation: `fadeUp 0.5s ${0.1 + i * 0.08}s ease-out forwards` }}
           >
-            <div className="flex items-center justify-between mb-4">
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${i === 0 ? 'bg-white/10' : 'bg-night-50'}`}>
-                <card.icon className={`w-5 h-5 ${i === 0 ? 'text-white' : 'text-night-500'}`} />
+            <div className="flex items-center justify-between mb-3 md:mb-4">
+              <div className={`w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center ${i === 0 ? 'bg-white/10' : 'bg-night-50'}`}>
+                <card.icon className={`w-4 h-4 md:w-5 md:h-5 ${i === 0 ? 'text-white' : 'text-night-500'}`} />
               </div>
-              <ArrowUpRight className={`w-4 h-4 ${i === 0 ? 'text-white/30' : 'text-night-300'}`} />
+              <ArrowUpRight className={`w-3.5 h-3.5 md:w-4 md:h-4 ${i === 0 ? 'text-white/30' : 'text-night-300'}`} />
             </div>
-            <p className="text-3xl font-black leading-none font-display">{card.value}</p>
-            <p className={`text-xs mt-1.5 font-medium ${i === 0 ? 'text-white/50' : 'text-night-400'}`}>{card.label}</p>
-            <p className={`text-[10px] mt-0.5 ${i === 0 ? 'text-white/30' : 'text-night-300'}`}>{card.sub}</p>
+            <p className="text-2xl md:text-3xl font-black leading-none font-display">{card.value}</p>
+            <p className={`text-[10px] md:text-xs mt-1 md:mt-1.5 font-medium ${i === 0 ? 'text-white/50' : 'text-night-400'}`}>{card.label}</p>
+            <p className={`text-[9px] md:text-[10px] mt-0.5 ${i === 0 ? 'text-white/30' : 'text-night-300'}`}>{card.sub}</p>
           </div>
         ))}
       </div>
 
       {/* Charts Row */}
-      <div className="grid grid-cols-3 gap-4">
-        {/* Area Chart — Leads per day */}
-        <div className="bg-white rounded-2xl p-5 border border-night-100 col-span-1 opacity-0" style={{ animation: 'fadeUp 0.5s 0.45s ease-out forwards' }}>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Area Chart */}
+        <div className="bg-white rounded-2xl p-4 md:p-5 border border-night-100 opacity-0" style={{ animation: 'fadeUp 0.5s 0.45s ease-out forwards' }}>
           <p className="text-xs font-bold text-night-400 uppercase tracking-wider mb-1">Daily Leads</p>
-          <p className="text-night-900 font-black text-lg mb-4">Last 7 Days</p>
-          <div className="h-32">
+          <p className="text-night-900 font-black text-base md:text-lg mb-4">Last 7 Days</p>
+          <div className="h-28 md:h-32">
             <AreaChart data={dailyData} />
           </div>
           <div className="flex justify-between mt-3">
             {dailyData.map(d => (
-              <span key={d.date} className="text-[9px] text-night-300 font-medium">{d.label}</span>
+              <span key={d.date} className="text-[8px] md:text-[9px] text-night-300 font-medium">{d.label}</span>
             ))}
           </div>
         </div>
 
-        {/* Donut — Type breakdown */}
-        <div className="bg-white rounded-2xl p-5 border border-night-100 col-span-1 opacity-0" style={{ animation: 'fadeUp 0.5s 0.55s ease-out forwards' }}>
+        {/* Donut */}
+        <div className="bg-white rounded-2xl p-4 md:p-5 border border-night-100 opacity-0" style={{ animation: 'fadeUp 0.5s 0.55s ease-out forwards' }}>
           <p className="text-xs font-bold text-night-400 uppercase tracking-wider mb-1">System Type</p>
-          <p className="text-night-900 font-black text-lg mb-4">Distribution</p>
+          <p className="text-night-900 font-black text-base md:text-lg mb-4">Distribution</p>
           <DonutChart data={typeData} />
-          <div className="flex flex-wrap gap-3 mt-4 justify-center">
+          <div className="flex flex-wrap gap-2 md:gap-3 mt-4 justify-center">
             {typeData.map((d, i) => (
               <div key={d.type} className="flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full" style={{ background: ['#171717', '#404040', '#737373', '#a3a3a3'][i] }} />
-                <span className="text-[10px] text-night-500 font-medium">{d.type} ({d.count})</span>
+                <span className="text-[9px] md:text-[10px] text-night-500 font-medium">{d.type} ({d.count})</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Horizontal bar — City Breakdown */}
-        <div className="bg-white rounded-2xl p-5 border border-night-100 col-span-1 opacity-0" style={{ animation: 'fadeUp 0.5s 0.65s ease-out forwards' }}>
+        {/* Horizontal Bar */}
+        <div className="bg-white rounded-2xl p-4 md:p-5 border border-night-100 opacity-0" style={{ animation: 'fadeUp 0.5s 0.65s ease-out forwards' }}>
           <p className="text-xs font-bold text-night-400 uppercase tracking-wider mb-1">City Performance</p>
-          <p className="text-night-900 font-black text-lg mb-4">Leads vs Conversions</p>
+          <p className="text-night-900 font-black text-base md:text-lg mb-4">Leads vs Conversions</p>
           <HorizontalBarChart data={cityData} />
         </div>
       </div>
 
       {/* Recent Leads */}
       <div className="bg-white rounded-2xl border border-night-100 opacity-0" style={{ animation: 'fadeUp 0.5s 0.75s ease-out forwards' }}>
-        <div className="px-5 py-4 border-b border-night-100 flex items-center justify-between">
-          <div>
-            <p className="text-night-900 font-bold text-sm">Recent Leads</p>
-            <p className="text-night-400 text-xs">Latest 5 submissions</p>
-          </div>
+        <div className="px-4 md:px-5 py-3 md:py-4 border-b border-night-100">
+          <p className="text-night-900 font-bold text-sm">Recent Leads</p>
+          <p className="text-night-400 text-xs">Latest 5 submissions</p>
         </div>
         <div className="divide-y divide-night-50">
           {recentLeads.map(lead => (
-            <div key={lead.id} className="px-5 py-3.5 flex items-center justify-between hover:bg-night-50/50 transition-colors">
-              <div className="flex items-center gap-4">
-                <div className="w-9 h-9 rounded-full bg-night-100 flex items-center justify-center text-night-500 text-xs font-bold flex-shrink-0">
+            <div key={lead.id} className="px-4 md:px-5 py-3 md:py-3.5 flex items-center justify-between hover:bg-night-50/50 transition-colors">
+              <div className="flex items-center gap-3 md:gap-4 min-w-0">
+                <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-night-100 flex items-center justify-center text-night-500 text-[10px] md:text-xs font-bold flex-shrink-0">
                   {lead.name.split(' ').map(n => n[0]).join('')}
                 </div>
-                <div>
-                  <p className="text-night-900 text-sm font-semibold">{lead.name}</p>
-                  <p className="text-night-400 text-xs">{lead.city} · {lead.type}</p>
+                <div className="min-w-0">
+                  <p className="text-night-900 text-sm font-semibold truncate">{lead.name}</p>
+                  <p className="text-night-400 text-[10px] md:text-xs truncate">{lead.city} · {lead.type}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold ${statusColors[lead.status]}`}>
+              <div className="flex items-center gap-2 md:gap-3 flex-shrink-0 ml-3">
+                <span className={`px-2 md:px-2.5 py-0.5 md:py-1 rounded-full text-[9px] md:text-[10px] font-bold ${statusColors[lead.status]}`}>
                   {lead.status}
                 </span>
-                <span className="text-night-300 text-xs">
+                <span className="text-night-300 text-[10px] md:text-xs hidden sm:block">
                   {new Date(lead.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}
                 </span>
               </div>
