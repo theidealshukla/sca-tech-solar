@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Play, Sun, Zap, ChevronDown } from 'lucide-react'
+import { ArrowRight, Play, Sun, Zap, ChevronDown, Lock } from 'lucide-react'
 
 const slides = [
   {
@@ -162,6 +162,16 @@ export default function Hero() {
       <a href="#stats" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 hover:text-white/70 transition-colors">
         <ChevronDown className="w-5 h-5 animate-bounce" />
       </a>
+
+      {/* Admin Login */}
+      <Link
+        to="/admin"
+        className="absolute bottom-8 left-5 md:left-8 flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-white/30 hover:text-white/60 hover:bg-white/10 transition-all duration-300 text-[10px] font-medium tracking-wider uppercase opacity-0"
+        style={{ animation: 'fadeIn 1s 1.5s ease-out forwards' }}
+      >
+        <Lock className="w-3 h-3" />
+        Admin
+      </Link>
     </section>
   )
 }
